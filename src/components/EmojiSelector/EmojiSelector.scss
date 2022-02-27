@@ -1,8 +1,33 @@
 .Container {
   display: flex;
   font-size: 3rem;
+
+  &:focus,
+  &:focus-within,
+  &:hover {
+    outline: none;
+
+    .List {
+      transform: scale(1);
+    }
+  }
+}
+
+.List {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: var(--offset-small);
+  font-size: 3rem;
+  background-color: var(--color-background-active);
+  border-radius: var(--border-radius);
+  transform-origin: 0 0;
+  transform: scale(0);
+  transition: all var(--transition-slow) ease-in-out;
 }
 
 .Item {
-  margin-right: var(--offset-small);
+  &:not(:last-child) {
+    margin-right: var(--offset-small);
+  }
 }

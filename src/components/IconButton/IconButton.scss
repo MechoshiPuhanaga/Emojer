@@ -1,4 +1,6 @@
 .Container {
+  display: flex;
+  align-items: center;
   font-size: inherit;
   background-color: transparent;
   cursor: pointer;
@@ -11,7 +13,7 @@
   &:focus,
   &:hover {
     .Icon {
-      transform: scale(1.1);
+      transform: scale(1.2);
     }
   }
 
