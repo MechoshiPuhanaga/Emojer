@@ -2,13 +2,11 @@
   display: flex;
   font-size: 3rem;
 
-  &:focus,
   &:focus-within,
   &:hover {
-    outline: none;
-
     .List {
       transform: scale(1);
+      outline: none;
     }
   }
 }

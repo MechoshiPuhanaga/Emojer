@@ -8,7 +8,7 @@ import styles from './Editor.scss';
 interface EditorProps {
   className?: string;
   clearOnSubmit?: boolean;
-  emojis: string[];
+  emojis: IconObject[];
   onSubmit: ({ html }: { html: string }) => void;
 }
 
@@ -21,7 +21,7 @@ const Editor: FC<EditorProps> = ({ className, clearOnSubmit, emojis, onSubmit })
     }
   }, []);
 
-  const onEmojiSelectHandler = useCallback((data: { src: string }) => {
+  const onEmojiSelectHandler = useCallback((data: IconObject) => {
     const selection = window.getSelection();
 
     if (selection && inputRef.current) {
@@ -37,6 +37,7 @@ const Editor: FC<EditorProps> = ({ className, clearOnSubmit, emojis, onSubmit })
 
       // Create image tag:
       const img = document.createElement('img');
+      img.alt = data.alt;
       img.src = data.src;
 
       // Insert image tag at the caret position:

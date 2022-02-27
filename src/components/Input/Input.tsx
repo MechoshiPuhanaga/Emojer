@@ -11,9 +11,11 @@ interface InputProps {
 const Input = forwardRef<HTMLInputElement, InputProps>(({ className }, ref) => {
   return (
     <div
+      aria-label="textbox"
       className={useClass([styles.Container, className], [className])}
       contentEditable
       ref={ref as LegacyRef<HTMLDivElement> | undefined}
+      role="textbox"
     ></div>
   );
 });

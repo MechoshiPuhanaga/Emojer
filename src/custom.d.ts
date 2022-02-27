@@ -6,3 +6,8 @@ declare module '*.scss' {
 declare module '*.png';
 
 declare const __mode__: string;
+
+interface IconObject {
+  alt: string;
+  src: string;
+}

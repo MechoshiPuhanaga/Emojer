@@ -14,10 +14,12 @@ const Preview: FC<PreviewProps> = ({ className, html }) => {
 
   return html ? (
     <div
+      aria-live="polite"
       className={classNames}
       dangerouslySetInnerHTML={{
         __html: html
       }}
+      role="region"
     />
   ) : null;
 };
