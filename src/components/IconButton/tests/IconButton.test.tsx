@@ -1,0 +1,3 @@
+describe('IconButton', () => {
+  it('Mounts', () => {});
+});

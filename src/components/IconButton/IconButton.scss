@@ -1,0 +1,23 @@
+.Container {
+  font-size: inherit;
+  background-color: transparent;
+  cursor: pointer;
+
+  .Icon {
+    height: 1em;
+    transition: all var(--transition) ease-in-out;
+  }
+
+  &:focus,
+  &:hover {
+    .Icon {
+      transform: scale(1.1);
+    }
+  }
+
+  &:active {
+    .Icon {
+      transform: scale(0.9);
+    }
+  }
+}

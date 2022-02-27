@@ -1,0 +1,35 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-medium);
+}
+
+.Input {
+  margin-bottom: var(--offset-small);
+}
+
+.Menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Clear,
+.Submit {
+  padding: var(--offset-small);
+  border-radius: var(--border-radius);
+  transition: all var(--transition) ease-in-out;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background-color: var(--color-background-active);
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
+.Clear {
+  margin-right: var(--offset-small);
+}

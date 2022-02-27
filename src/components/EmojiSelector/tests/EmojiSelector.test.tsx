@@ -1,0 +1,3 @@
+describe('EmojiSelector', () => {
+  it('Mounts', () => {});
+});
