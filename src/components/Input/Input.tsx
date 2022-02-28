@@ -14,6 +14,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ className }, ref) => {
       aria-label="textbox"
       className={useClass([styles.Container, className], [className])}
       contentEditable
+      data-test="input"
       ref={ref as LegacyRef<HTMLDivElement> | undefined}
       role="textbox"
     ></div>

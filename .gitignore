@@ -13,3 +13,4 @@ yarn-error.log
 
 # tests:
 coverage
+cypress/integration/*-*
