@@ -43,7 +43,9 @@ describe('Emojer', () => {
       .type('{upArrow}')
       .type('{upArrow}')
       .type('{upArrow}')
-      .type('{upArrow}');
+      .type('{upArrow}')
+      .type('{end}')
+      .type('{home}');
 
     cy.get('[data-test="icon-button-0"]').should('be.focused').click();
 

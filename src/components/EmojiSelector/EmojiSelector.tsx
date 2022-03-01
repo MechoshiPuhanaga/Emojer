@@ -54,7 +54,7 @@ const EmojiSelector: FC<EmojiSelectorProps> = ({ emojis, onSelect }) => {
           setFocusedIndex(0);
           break;
 
-        case 'Tab':
+        case 'Tab': // Not yet supported in Cypress
           setFocusedIndex(-1);
           break;
       }
