@@ -54,7 +54,6 @@ const EmojiSelector: FC<EmojiSelectorProps> = ({ emojis, onSelect }) => {
           setFocusedIndex(0);
           break;
 
-        case 'Escape':
         case 'Tab':
           setFocusedIndex(-1);
           break;
@@ -71,12 +70,19 @@ const EmojiSelector: FC<EmojiSelectorProps> = ({ emojis, onSelect }) => {
       onKeyUp={onKeyUpHandler}
     >
       <Icon.Smile />
-      <ul aria-labelledby="emoji-list" className={styles.List} role="listbox" tabIndex={0}>
-        {emojis.map((emoji) => {
+      <ul
+        aria-labelledby="emoji-list"
+        className={styles.List}
+        data-test="emoji-list"
+        role="listbox"
+        tabIndex={0}
+      >
+        {emojis.map((emoji, index) => {
           return (
             <li className={styles.Item} key={emoji.alt} role="option">
               <IconButton
                 alt={emoji.alt}
+                dataTest={index}
                 focused={emoji.alt === focusedItem}
                 onClick={onSelect}
                 src={emoji.src}

@@ -56,11 +56,12 @@ const Editor: FC<EditorProps> = ({ className, clearOnSubmit, emojis, onSubmit })
       <div className={styles.Menu}>
         <EmojiSelector emojis={emojis} onSelect={onEmojiSelectHandler} />
         <div>
-          <button className={styles.Clear} onClick={clear}>
+          <button className={styles.Clear} data-test="clear" onClick={clear}>
             Clear
           </button>
           <button
             className={styles.Submit}
+            data-test="submit"
             onClick={() => {
               onSubmit({ html: inputRef?.current?.innerHTML ?? '' });
 

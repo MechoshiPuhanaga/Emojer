@@ -4,12 +4,13 @@ import styles from './IconButton.scss';
 
 interface IconButtonProps {
   alt: string;
+  dataTest: string | number;
   focused?: boolean;
   onClick: (icon: IconObject) => void;
   src: string;
 }
 
-const IconButton: FC<IconButtonProps> = ({ alt, focused, onClick, src }) => {
+const IconButton: FC<IconButtonProps> = ({ alt, dataTest, focused, onClick, src }) => {
   const elementRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const IconButton: FC<IconButtonProps> = ({ alt, focused, onClick, src }) => {
   return (
     <button
       className={styles.Container}
+      data-test={`icon-button-${dataTest}`}
       onClick={() => onClick({ alt, src })}
       ref={elementRef}
       tabIndex={-1}

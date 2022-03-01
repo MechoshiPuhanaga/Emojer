@@ -13,4 +13,6 @@ yarn-error.log
 
 # tests:
 coverage
-cypress/integration/*-*
+cypress/integration/examples
+.nyc_output
+instrumented

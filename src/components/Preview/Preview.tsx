@@ -16,6 +16,7 @@ const Preview: FC<PreviewProps> = ({ className, html }) => {
     <div
       aria-live="polite"
       className={classNames}
+      data-test="preview"
       dangerouslySetInnerHTML={{
         __html: html
       }}

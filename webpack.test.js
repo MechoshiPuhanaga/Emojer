@@ -31,21 +31,29 @@ module.exports = {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            plugins: ['@babel/plugin-transform-runtime', 'istanbul'],
+            presets: [
+              '@babel/preset-typescript',
+              '@babel/preset-env',
+              ['@babel/preset-react', { runtime: 'automatic' }]
+            ]
+          }
         }
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'public/fonts/[name].[ext]'
+          filename: 'public/fonts/[name][ext]'
         }
       },
       {
         test: /\.(png|jpe?g|gif|svg|ico)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'public/images/[name].[ext]'
+          filename: 'public/images/[name][ext]'
         }
       },
       {
